@@ -1,0 +1,13 @@
+/*menu bar vetical général : background transparent ...*/
+.p-menubar {
+    padding: 0.5rem;
+    background: none  !important;
+    color: #495057;
+    border: none !important;
+    border-radius: 3px;
+}
+
+/* Couleur et taille de police */
+.menubar_vertical .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
+    color: orangered;
+}

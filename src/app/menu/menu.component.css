@@ -1,0 +1,10 @@
+.menu_vertical.p-menubar.div.p-menubarsub {
+    margin-left: auto !important;
+}
+
+.name_hotel_vertical{
+    font-family: Playfair Display SC;
+    font-size: 32px;
+    color: #efcd86;
+    padding-top: 10px;
+} 

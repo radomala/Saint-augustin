@@ -8,8 +8,9 @@ export class PhotoService {
 
     constructor(private http: HttpClient) { }
 
-    getImages() {
-    return this.http.get<any>('assets/image/photos.json')
+    getImages(choix : string) {
+      let photo = 'assets/image/'+choix+'.json';
+    return this.http.get<any>(photo)
       .toPromise()
       .then(res => <Image[]>res.data)
       .then(data => { return data; });

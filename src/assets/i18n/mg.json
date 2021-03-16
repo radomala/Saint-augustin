@@ -1,0 +1,34 @@
+{
+    "form": {
+      "login": "Solon'anarana *",
+      "name": "Anarana *",
+      "password": "Teny miafina *"
+    },
+    "footer": {
+      "cgu": "Toromarika ankapobeiny amin'ny fampiasana ny site (CGU)",
+      "contact-us": "Hifandray aminay",
+      "copyright": "(c) alalana raketa-mg.org 2019",
+      "legal-information": "Toromarika ara-dalàna"
+    },
+    "general": {
+      "our-commitments": "Ireo fanambinay",
+      "partner": "Ireo mpiara-miasa",
+      "team": "Ekipa"
+    },
+    "landing": {
+      "sign-in": "Miditra",
+      "subscribe": "Misoratra anarana",
+      "subscribe-title": "Raha mbola tsy manana kaonty enao",
+      "unsubscribe": "Tsy hifandray intsony",
+      "welcome": "Tongasoa"
+    },
+    "member": {
+      "contact-me": "Hifandray amiko",
+      "error-loading": "Tsy afaka mampiseho ny pejy izahay",
+      "my-contact": "Fifandraisana amiko"
+    },
+    "shared": {
+      "back": "Miverina",
+      "page-not-found": "Pejy tsy mbola misy"
+    }
+  }

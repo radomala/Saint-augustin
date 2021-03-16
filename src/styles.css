@@ -10,4 +10,14 @@
 /* Couleur et taille de police */
 .menubar_vertical .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
     color: orangered;
+    font-family: Playfair Display SC;
+}
+
+.souris {
+ cursor: pointer !important;;
+}
+
+.souris:hover {
+    color: red !important;
+    font-weight: bold !important;
 }

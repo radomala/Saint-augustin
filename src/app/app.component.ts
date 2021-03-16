@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService, SelectItem } from 'primeng/api';
+import { EmailService } from './service/emailService';
 import { PhotoService } from './service/photoService';
 
 @Component({
@@ -8,37 +11,110 @@ import { PhotoService } from './service/photoService';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit,  DoCheck {
 
-  constructor(private router: Router, private photoService: PhotoService) { }
+  constructor(private emailService: EmailService, private router: Router, private photoService: PhotoService, private fb: FormBuilder) { }
+
+  userform: FormGroup;
+  submitted: boolean;
+  genders: SelectItem[];
+  description: string;
 
   images: any[];
-  responsiveOptions:any[] = [
+  visibleSidebar1;
+  saint_augustin: boolean;
+  nos_menu: boolean;
+  nos_bengalow: boolean;
+  fondtransparent:boolean;
+
+  responsiveOptions: any[] = [
     {
-        breakpoint: '1024px',
-        numVisible: 5
+      breakpoint: '1024px',
+      numVisible: 5
     },
     {
-        breakpoint: '768px',
-        numVisible: 3
+      breakpoint: '768px',
+      numVisible: 3
     },
     {
-        breakpoint: '560px',
-        numVisible: 1
+      breakpoint: '560px',
+      numVisible: 1
     }
-];
+  ];
+
+
+
+  map: boolean;
+  diaporama: boolean = true;
 
   ngOnInit(): void {
-    // this.images = [];
-    // this.images.push({source:'assets/image/image1.jpg', alt:'Description for Image 1', title:'Title 1'});
-    // this.images.push({source:'assets/image/image2.jpg', alt:'Description for Image 2', title:'Title 2'});
-    // this.images.push({source:'assets/image/image3.jpg', alt:'Description for Image 3', title:'Title 3'});
-    // this.images.push({source:'assets/image/image4.jpg', alt:'Description for Image 4', title:'Title 4'});
-    // this.images.push({source:'assets/image/image5.jpg', alt:'Description for Image 5', title:'Title 5'});
-    // this.images.push({source:'assets/image/image6.jpg', alt:'Description for Image 6', title:'Title 6'});
-    // this.images.push({source:'assets/image/image7.jpg', alt:'Description for Image 7', title:'Title 7'});
-    // this.images.push({source:'assets/image/image8.jpg', alt:'Description for Image 8', title:'Title 8'});
-     this.photoService.getImages().then(images => this.images = images)
+    //les photos afficher par defaut= saint_augustin.json
+    this.saint_augustin = true;
+    this.photoService.getImages('saint_augustin').then(images => this.images = images);
   }
-  
+
+  // methode qui s'execute automatique, c'est pour verifier le 
+  //je dois conaitre le valeur de scroll y
+  ngDoCheck() {
+    var y = window.scrollY;
+    if (y===0) {
+       //le fond de header est tranparent
+       this.fondtransparent = true
+    } else {
+      // le fond de header n'est pas transparent
+      this.fondtransparent = false;
+    }
+  }
+
+  menuHorizontalPhotos(choix: string) {
+    //afficher diaporama (si on clique diaporama, on affiche le diaporama)
+    this.diaporama = true;
+    //cacher map (si on clique diaporama, on cache le map)
+    this.map = false;
+    //choix
+    if (choix === 'saint_augustin') {
+      this.saint_augustin = true;
+      this.nos_menu = false;
+      this.nos_bengalow = false;
+      this.photoService.getImages(choix).then(images => this.images = images)
+    } else if (choix === 'nos_menu') {
+      this.saint_augustin = false;
+      this.nos_menu = true;
+      this.nos_bengalow = false;
+      this.photoService.getImages(choix).then(images => this.images = images)
+    } else if (choix === 'nos_bengalow') {
+      this.saint_augustin = false;
+      this.nos_menu = false;
+      this.nos_bengalow = true;
+      this.photoService.getImages(choix).then(images => this.images = images)
+    }
+
+    //cacher sidebar, on ferme le sidebar a la fin
+    this.visibleSidebar1 = false;
+
+
+  }
+
+  menuHorizontalMap() {
+    //afficher map (si on clique map, on affiche map)
+    this.map = true;
+    //cacher diaporama
+    this.diaporama = false;
+    //cacher sidebar, on ferme le sidebar a la fin
+    this.visibleSidebar1 = false;
+  }
+
+  // methode qui permet de descendre en bas de la page
+  afficherformuliareContact() {
+    window.scroll(0, 10000);
+  }
+
+  test(): string {
+    var y = window.scrollY;
+    console.log('yyy :', y);
+    return null;
+
+  }
+
+
 }

@@ -1,8 +1,36 @@
-.menufixe {
+.menufixe_fond_transparent {
+  /* position: fixed !important; */
   position: fixed !important;
   top: 0;
   left: 1%;
   width: 98%;
   z-index: 2;
+  padding-top: 35px;
   }
+
+  .menufixe_fond_nontransparent {
+    /* position: fixed !important; */
+    position: fixed !important;
+    top: 0;
+    left: 1%;
+    width: 98%;
+    z-index: 2;
+    padding-top: 35px;
+    background-color: #92a3b9;
+    }
+
+.menu_vertical.p-menubar.div.p-menubarsub {
+    margin-left: auto !important;
+}
+
+.name_hotel_vertical{
+    font-family: Playfair Display SC;
+    font-size: 32px;
+    color: #efcd86;
+    padding-top: 10px;
+} 
+
+.menu_horizontal_stylepolice {
+  font-family: Playfair Display SC;
+}
   

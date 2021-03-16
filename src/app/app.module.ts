@@ -26,20 +26,32 @@ import {GalleriaModule} from 'primeng/galleria';
 GalleriaModule
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
-
-import { MenuComponent } from './menu/menu.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-
 import { MembreService } from './service/membreService';
 import { PhotoService } from './service/photoService';
+import { MenuHorizontalComponent } from './menu-horizontal/menu-horizontal.component';
+import { MenuVerticalComponent } from './menu-vertical/menu-vertical.component';
+import {GMapModule} from 'primeng/gmap';
+import { MapComponent } from './map/map.component';
+import {ToastModule} from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import { ContactComponent } from './contact/contact.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
+import {InputSwitchModule} from 'primeng/inputswitch';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader  } from '@ngx-translate/http-loader';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuHorizontalComponent,
+    MenuVerticalComponent,
+    MapComponent,
+    ContactComponent
     
   ],
   imports: [
@@ -76,13 +88,25 @@ import { PhotoService } from './service/photoService';
     TabMenuModule,
     MenuModule,
     GalleriaModule,
-
-
+    GMapModule,
+    ToastModule,
+    NgxCaptchaModule,
+    InputSwitchModule,
+    TranslateModule.forRoot(
+      {
+        loader: {
+          provide : TranslateLoader,
+          useFactory : (http : HttpClient) => {return new TranslateHttpLoader(http, './assets/i18n', '.json' );},
+          deps: [HttpClient] 
+        }
+      }
+    ),
+    
 
     //HTTP
     HttpClientModule
   ],
-  providers: [MembreService, PhotoService],
+  providers: [MembreService, PhotoService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

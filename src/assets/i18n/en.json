@@ -1,0 +1,34 @@
+{
+    "form": {
+      "login": "Login *",
+      "name": "Name *",
+      "password": "Password *"
+    },
+    "footer": {
+      "cgu": "User Condition General (CGU)",
+      "contact-us": "Contact us",
+      "copyright": "(c) copyright raketa-mg.org 2019",
+      "legal-information": "Legal informations"
+    },
+    "general": {
+      "our-commitments": "Our commitments",
+      "partner": "Our partners",
+      "team": "The team"
+    },
+    "landing": {
+      "sign-in": "Log in",
+      "subscribe": "Subscribe",
+      "subscribe-title": "If you don't have an accompte",
+      "unsubscribe": "Unsubscribe",
+      "welcome": "Welcome"
+    },
+    "member": {
+      "contact-me": "Contact me",
+      "error-loading": "Can't load this page",
+      "my-contact": "My contact"
+    },
+    "shared": {
+      "back": "Back",
+      "page-not-found": "Page not found"
+    }
+  }

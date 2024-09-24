@@ -26,6 +26,7 @@ export class MapComponent implements OnInit {
   constructor(private messageService: MessageService) {}
 
   ngOnInit() {
+      
       this.options = {
           center: {lat: -23.545590, lng: 43.749987},
           zoom: 12

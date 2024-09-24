@@ -1,20 +1,32 @@
 import { Injectable } from '@angular/core';
-import {HttpClient,HttpHeaders} from '@angular/common/http';
+import { HttpClient,HttpParams, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Result } from '../beans/result';
+import { Contenumail } from '../beans/contenumail';
+
 @Injectable({
   providedIn: 'root'
 })
 export class EmailService {
 
-  constructor(private httpreq:HttpClient) { }
+  constructor(private httpreq: HttpClient) { }
 
-  sendMessage(body){
-      console.log('service ' + body );
-    let headers = {
-      headers : new HttpHeaders({
-        'Content-Type' :'application/json'
-      })
-    }
-    return this.httpreq.post("http://localhost:3000/email",body,headers);
+  envoyerMail(contenu: any): Observable<any> {
+    
+    console.log('contenu mail : ' ,contenu);
+    let params = new HttpParams();
+    params = params.append("contenu",  contenu);
+
+    return this.httpreq.post<any>('http://localhost:8080/sendAttachmentEmail', contenu);
   }
-  
+
+  envoyerMailBis(contenu: Contenumail): Observable<Result> {
+    let params = new HttpParams();
+    params = params.append("name",  ''+contenu.name);
+    params = params.append("tel",  ''+contenu.tel);
+    params = params.append("mail",  ''+contenu.mail);
+    params = params.append("objectmail",  ''+contenu.message);
+    return this.httpreq.get<Result>('http://localhost:8080/sendSimpleEmail', {params});
+  }
+
 }

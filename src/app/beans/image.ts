@@ -1,6 +1,6 @@
-export interface  Image {
-    previewImageSrc?;
-    thumbnailImageSrc?;
-    alt?;
-    title?;
+export class  Image {
+    previewImageSrc: string;
+    thumbnailImageSrc: string;
+    alt: string;
+    title: string;
 }

@@ -1,34 +1,16 @@
 {
-    "form": {
-      "login": "Login *",
-      "name": "Name *",
-      "password": "Password *"
-    },
-    "footer": {
-      "cgu": "User Condition General (CGU)",
-      "contact-us": "Contact us",
-      "copyright": "(c) copyright raketa-mg.org 2019",
-      "legal-information": "Legal informations"
-    },
-    "general": {
-      "our-commitments": "Our commitments",
-      "partner": "Our partners",
-      "team": "The team"
-    },
-    "landing": {
-      "sign-in": "Log in",
-      "subscribe": "Subscribe",
-      "subscribe-title": "If you don't have an accompte",
-      "unsubscribe": "Unsubscribe",
-      "welcome": "Welcome"
-    },
-    "member": {
-      "contact-me": "Contact me",
-      "error-loading": "Can't load this page",
-      "my-contact": "My contact"
-    },
-    "shared": {
-      "back": "Back",
-      "page-not-found": "Page not found"
-    }
+  "menuhorizontal": {
+    "hotel": "HOTEL LAURIA",
+    "SA": "SAINT AUGUSTIN",
+    "VR": "YOUR RESTORANT",
+    "VB": "YOUR BUNGOLOW",
+    "MAP": "LOCALISATION"
+  },
+  "contact": {
+    "message1": "Our team is available by phone and email every day, 24 hours a day. What is most important to us? The comfort of our friendly customers! Do not hesitate to contact us, it is with great pleasure that we will answer all your questions.",
+    "message2": "Write to us",
+    "message3": "I accept the privacy policy",
+    "message4": "The data collected on this form is processed by Hôtel Lauria in order to manage the information relating to the contact request on the site https://www.hotel-lauria.com and this, in accordance with our Privacy Policy."
+    
   }
+}

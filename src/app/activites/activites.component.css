@@ -1,0 +1,23 @@
+.div_carousel_template {
+    width: 100%;
+    height: 100vh;
+}
+
+.zoom div img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.zoom div:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+.div_activites_grand {
+    width: 100%;
+    height: 100vh;
+}

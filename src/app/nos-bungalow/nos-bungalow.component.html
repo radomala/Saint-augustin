@@ -1,0 +1,85 @@
+<div class="div_bungalow_grand">
+    <div class="souris" style="position: absolute;margin-left: 50%; padding-top: 70vh; color: white;" (click)="decouvrir()">
+        <span>Decouvrir</span>
+        <br>
+        <span style="margin-left: 50%;">|</span>
+        <br>
+        <span style="margin-left: 50%;">|</span>  
+    </div>
+    <div>
+        <img src="/assets/image/nos_bungalow/externe/fond.jpg" style="width: 100%;height: 100vh;">
+    </div>
+</div>
+<br>
+<br>
+<div id="commentaire1">
+    Madère offre des conditions attractives pour les passionnés de surf. Outre ses célèbres « point breaks », les
+    paysages volcaniques qui surplombent les plages sont à couper le souffle. Les vagues sont généralement « peu
+    fréquentées » et sur les plages ont des zones d’accès qui facilitent le « line up » des surfeurs.
+</div>
+<br>
+<br>
+
+<div>
+    <img src="/assets/image/nos_bungalow/externe/fond_simple2.jpg" style="width: 100%;height: 100vh;">
+</div>
+
+<div class="p-grid div_contact_menu_petit">
+    <div class="p-col div_contact_menu_petit_diapo">
+        <div class="box">
+            <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions"
+                [containerStyle]="{'max-width': '100%'}" [numVisible]="5" [circular]="true" [autoPlay]="true"
+                [showItemNavigators]="true" [transitionInterval]="2000" [showThumbnails]="false">
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="item.previewImageSrc" style="width: 100%;" />
+                </ng-template>
+                <ng-template pTemplate="thumbnail" let-item>
+                    <div class="p-grid p-nogutter p-justify-center">
+                        <img [src]="item.thumbnailImageSrc" style="display: block;" />
+                    </div>
+                </ng-template>
+            </p-galleria>
+        </div>
+    </div>
+    <div class="p-col  div_contact_menu_petit_message">
+        <div class="box">
+            <span class="span_description">
+                Notre hôtel vous propose deux restaurants aux cartes et aux saveurs différentes. Selon vos goûts et
+                vos envies, vous pourrez durant votre séjour dégustez des plats a la fois raffinés et savoureux,
+                cuisinés avec passion par nos chefs. Nous vous conseillons de réserver vos tables dès votre arrivée à
+                l'hôtel.
+            </span> 
+        </div>
+    </div>
+</div>
+
+<div class="p-grid div_contact_menu_petit">
+    <div class="p-col  div_contact_menu_petit_message">
+        <div class="box">
+            <span  class="span_description">
+                Notre hôtel vous propose deux restaurants aux cartes et aux saveurs différentes. Selon vos goûts et
+                vos envies, vous pourrez durant votre séjour dégustez des plats a la fois raffinés et savoureux,
+                cuisinés avec passion par nos chefs. Nous vous conseillons de réserver vos tables dès votre arrivée à
+                l'hôtel.
+            </span>
+        </div>
+    </div>
+    <div class="p-col div_contact_menu_petit_diapo">
+        <div class="box">
+            <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions"
+                [containerStyle]="{'max-width': '100%'}" [numVisible]="5" [circular]="true" [autoPlay]="true"
+                [showItemNavigators]="true" [transitionInterval]="2000" [showThumbnails]="false">
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="item.previewImageSrc" style="width: 100%;" />
+                </ng-template>
+                <ng-template pTemplate="thumbnail" let-item>
+                    <div class="p-grid p-nogutter p-justify-center">
+                        <img [src]="item.thumbnailImageSrc" style="display: block;" />
+                    </div>
+                </ng-template>
+            </p-galleria>
+        </div>
+    </div>
+</div>
+
+

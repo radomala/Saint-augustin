@@ -1,0 +1,21 @@
+.div_contact_menu_grand{
+    width: 100%;
+    height: 100vh;
+  }
+
+  .div_contact_menu_petit{
+    width: 100%;
+    margin: 25px auto;
+  }
+
+  .div_contact_menu_petit_diapo{
+    width: 50%;
+  }
+  .div_contact_menu_petit_message{
+    width: 50%;
+    
+    color: white;
+    background-color:#28282e;
+  }
+
+

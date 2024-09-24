@@ -1,0 +1,12 @@
+#navigation {
+    width: 200px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .styleborder {
+    border: #beb4a4;
+    border-style: none none none solid;
+}
+  

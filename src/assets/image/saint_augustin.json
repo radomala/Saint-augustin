@@ -1,32 +1,50 @@
 {
     "data":[
         {
-            "previewImageSrc": "assets/image/saint_augustin/image1.jpg",
-            "thumbnailImageSrc": "assets/image/saint_augustin/image1_min.jpg",
+            "previewImageSrc": "assets/image/decouvrir_saint_augustin/baleine.jpg",
+            "thumbnailImageSrc": "",
             "alt": "Description for Image 1",
             "title": "Title 1"
         },
         {
-            "previewImageSrc": "assets/image/saint_augustin/image2.jpg",
-            "thumbnailImageSrc": "assets/image/saint_augustin/image1_min.jpg",
+            "previewImageSrc": "assets/image/decouvrir_saint_augustin/baleine_2.jpg",
+            "thumbnailImageSrc": "",
+            "alt": "Description for Image 1",
+            "title": "Title 1"
+        },
+        {
+            "previewImageSrc": "assets/image/decouvrir_saint_augustin/flamment_rose.jpg",
+            "thumbnailImageSrc": "",
             "alt": "Description for Image 2",
             "title": "Title 2"
         },
         {
-            "previewImageSrc": "assets/image/saint_augustin/image4.jpg",
+            "previewImageSrc": "assets/image/decouvrir_saint_augustin/flamment_rose_2.jpg",
+            "thumbnailImageSrc": "",
+            "alt": "Description for Image 2",
+            "title": "Title 2"
+        },
+        {
+            "previewImageSrc": "assets/image/decouvrir_saint_augustin/pecheur.jpg",
             "thumbnailImageSrc": "assets/image/saint_augustin/image1_min.jpg",
             "alt": "Description for Image 4",
             "title": "Title 4"
         },
         {
-            "previewImageSrc": "assets/image/saint_augustin/image4.jpg",
+            "previewImageSrc": "assets/image/decouvrir_saint_augustin/pecheur_2.jpg",
             "thumbnailImageSrc": "assets/image/saint_augustin/image1_min.jpg",
             "alt": "Description for Image 4",
             "title": "Title 4"
         },
         {
-            "previewImageSrc": "assets/image/saint_augustin/image5.jpg",
-            "thumbnailImageSrc": "assets/image/saint_augustin/image1_min.jpg",
+            "previewImageSrc": "assets/image/decouvrir_saint_augustin/plage.jpg",
+            "thumbnailImageSrc": "",
+            "alt": "Description for Image 4",
+            "title": "Title 4"
+        },
+        {
+            "previewImageSrc": "assets/image/decouvrir_saint_augustin/plage_2.jpg",
+            "thumbnailImageSrc": "",
             "alt": "Description for Image 4",
             "title": "Title 4"
         }

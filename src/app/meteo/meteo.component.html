@@ -1,0 +1,19 @@
+<div id="test">
+    <div *ngIf="WeatherData.isDay" id="test2">
+        <i class="fas fa-3x fa-sun csssun" ></i>
+    </div>
+    <div  *ngIf="!WeatherData.isDay" id="test2">
+        <i class="fas fa-3x fa-moon cssmoon" ></i>
+    </div>
+
+    <div   id="test2" class="raonaDiv">
+        <i class="fas fa-3x fa-cloud raona"></i>
+    </div>
+    
+     <div id="test2" style="font-size: 27px; margin-top: 5px;">{{WeatherData.temp_celcius}}°</div>
+    <div id="test2" style="font-size: 7px;">{{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°</div>
+    <div id="test2"style="font-size: 7px;">Feeels like : {{WeatherData.temp_feels_like}}°</div>
+    <div id="test2" style="font-size: 27px; margin-top: 10px;">{{WeatherData.name}}°</div>
+    <div id="test2" style="font-size: 7px;">Humidity : {{WeatherData.main.humidity}}%</div>
+</div>
+

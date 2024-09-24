@@ -1,0 +1,22 @@
+{
+    "data":[
+        {
+            "previewImageSrc": "assets/image/nos_menu/petit/image2.jpg",
+            "thumbnailImageSrc": "assets/image/nos_menu/image1_min.jpg",
+            "alt": "Description for Image 1",
+            "title": "Title 1"
+        },
+        {
+            "previewImageSrc": "assets/image/nos_menu/petit/image3.jpg",
+            "thumbnailImageSrc": "assets/image/nos_menu/image1_min.jpg",
+            "alt": "Description for Image 2",
+            "title": "Title 2"
+        },
+        {
+            "previewImageSrc": "assets/image/nos_menu/petit/image4.jpg",
+            "thumbnailImageSrc": "assets/image/nos_menu/image1_min.jpg",
+            "alt": "Description for Image 2",
+            "title": "Title 2"
+        }
+    ]
+}

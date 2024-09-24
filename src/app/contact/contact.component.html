@@ -1,37 +1,40 @@
 <p-toast [style]="{marginTop: '80px'}"></p-toast>
 
 <div style="width: 70%; margin: auto;font-family:cursive; color: white;padding-top: 10px;">
-    Notre équipe est disponible par téléphone et par e-mail tous les jours et 24h/24. Le plus important pour nous ? Le
-    confort de notre aimable clientèle ! N'hésitez donc pas à nous solliciter c'est avec grand plaisir que nous
-    répondrons à toutes vos questions.
+    {{'contact.message1' | translate}}
 </div>
 
 <br>
 <br>
 
 <div style="width: 50%; margin: auto;">
-    <p-panel header="Ecrivez-nous!">
         <div class="p-grid p-dir-col">
             <div class="p-col">
                 <div class="box">
-                    <input style="width: 100% !important;" pInputText type="text" placeholder="Required" />
+                    <input style="width: 100% !important;"  [(ngModel)]="name" pInputText type="text" placeholder="Nom/Prenom" />
                 </div>
             </div>
             <div class="p-col">
                 <div class="box">
-                    <input style="width: 100% !important;" pInputText type="text" placeholder="Required" />
+                    <input style="width: 100% !important;" [(ngModel)]="tel" pInputText type="text" placeholder="Téléphone" />
                 </div>
             </div>
             <div class="p-col">
                 <div class="box">
-                    <input style="width: 100% !important;" pInputText type="text" placeholder="Required" />
+                    <input style="width: 100% !important;" [(ngModel)]="mail" pInputText type="text" placeholder="E-Mail" />
+                </div>
+            </div>
+            <div class="p-col">
+                <div class="box">
+                    <textarea style="width: 100% !important;" rows="5" cols="30" pInputTextarea [(ngModel)]="objectmail" placeholder="Message"></textarea>
                 </div>
             </div>
 
             <div class="p-col">
                 <div class="box">
                     <ngx-recaptcha2 siteKey="6LftSYAaAAAAAExJsxonbGoXfPZdkQw4QxJsFU2H"
-                        (success)="handleSuccess($event)">
+                        (success)="handleSuccess($event)"
+                        (expire)="handleExpire()">
                     </ngx-recaptcha2>
                 </div>
             </div>
@@ -39,26 +42,28 @@
                 <div>
                     <div style="display: inline;">
                         <div style="display: inline;">
-                            <p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
+                            <p-inputSwitch [(ngModel)]="confidentialite"></p-inputSwitch>
                         </div>
                         <div style="display: inline;">
-                            <span style="font-family: Playfair Display SC;">J'accepte la politique de
-                                confidentialité</span>
+                            <span style="font-family: Playfair Display SC; color: white;">{{'contact.message3' | translate}}</span>
                         </div>
                     </div>
 
                 </div>
             </div>
 
+            <div *ngIf="capchat && confidentialite">
+                <p-button (click)="sendMessage()" label="Envoyer message"></p-button>
+            </div>
+
+             <div *ngIf="!capchat || !confidentialite">
+                <p-button  label="Envoyer message" disabled="true"></p-button>
+            </div> 
         </div>
-    </p-panel>
 
 </div>
 <br>
 <br>
-<div style="width: 70%; margin: auto;font-family:cursive; color: white;padding-top: 10px;">
-    Les données recueillies sur ce formulaire sont traitées par Hôtel Lauria afin de gérer les informations
-    relatives à la demande de contact sur le site https://www.hotel-lauria.com et ce, conformément à notre Politique
-    de confidentialité.
+<div style="width: 70%; margin: auto;font-family:cursive; color: white;padding-top: 10px;">{{'contact.message4' | translate}}
 
 </div>

@@ -1,18 +1,43 @@
- <p-sidebar [(visible)]="display" styleClass="p-sidebar-md" [baseZIndex]="10000">
+<p-sidebar [(visible)]="activer_menuHorizontal" [baseZIndex]="10000">
     <br>
     <br>
-    <br>
-    <br>
-    <h3>PHOTOS</h3>
-    <br>
-    <div>
-      <a  class="souris" (click)="test()">
-          <span style="cursor: pointer;">SAINT AUGUSTIN</span>
+    <div class="menu_horizontal_stylepolice">
+      <h2 style="font-weight:normal;">{{'menuhorizontal.hotel' | translate}}</h2>
+      <br>
+      <div>
+        <img src="/assets/image/menu_horizontal/saint_augustin.png" height="30" class="p-mr-2" alt="brand logo">
+        <a class="souris" (click)="navigateToDecouvrirSaintAugustin()">
+          <span style="cursor: pointer;">{{'menuhorizontal.SA' | translate}}</span>
         </a>
+      </div>
+      <br>
+      <div>
+        <img src="/assets/image/menu_horizontal/restaurant.png" height="30" class="p-mr-2" alt="brand logo">
+        <a class="souris" (click)="navigateToNosRestaurant()">
+          <span style="cursor: pointer;">{{'menuhorizontal.VR' | translate}}</span>
+        </a>
+      </div>
+      <br>
+      <div>
+        <img src="/assets/image/menu_horizontal/bungalow.png" height="30" class="p-mr-2" alt="brand logo">
+        <a class="souris" (click)="navigateToNosBengalow()">
+          <span style="cursor: pointer;">{{'menuhorizontal.VB' | translate}}</span>
+        </a>
+      </div>
+      <br>
+      <div>
+        <img src="/assets/image/menu_horizontal/activites.png" height="30" class="p-mr-2" alt="brand logo">
+        <a class="souris" (click)="navigateToNosActivites()">
+          <span style="cursor: pointer;">NOS ACTIVITES</span>
+        </a>
+      </div>
+      <br>
+      <div>
+        <img src="/assets/image/menu_horizontal/map.png" height="30" class="p-mr-2" alt="brand logo">
+        <a class="souris" (click)="menuHorizontalMap()">
+          <span style="cursor: pointer;">{{'menuhorizontal.MAP' | translate}}</span>
+        </a>
+      </div>
     </div>
-   
     <br>
-    <span>NOS MENU</span>
-    <br>
-    <span>NOS BANGLAW</span>
-  </p-sidebar> 
+  </p-sidebar>

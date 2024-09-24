@@ -1,34 +1,15 @@
 {
-    "form": {
-      "login": "Solon'anarana *",
-      "name": "Anarana *",
-      "password": "Teny miafina *"
-    },
-    "footer": {
-      "cgu": "Toromarika ankapobeiny amin'ny fampiasana ny site (CGU)",
-      "contact-us": "Hifandray aminay",
-      "copyright": "(c) alalana raketa-mg.org 2019",
-      "legal-information": "Toromarika ara-dalàna"
-    },
-    "general": {
-      "our-commitments": "Ireo fanambinay",
-      "partner": "Ireo mpiara-miasa",
-      "team": "Ekipa"
-    },
-    "landing": {
-      "sign-in": "Miditra",
-      "subscribe": "Misoratra anarana",
-      "subscribe-title": "Raha mbola tsy manana kaonty enao",
-      "unsubscribe": "Tsy hifandray intsony",
-      "welcome": "Tongasoa"
-    },
-    "member": {
-      "contact-me": "Hifandray amiko",
-      "error-loading": "Tsy afaka mampiseho ny pejy izahay",
-      "my-contact": "Fifandraisana amiko"
-    },
-    "shared": {
-      "back": "Miverina",
-      "page-not-found": "Pejy tsy mbola misy"
+  "menuhorizontal": {
+    "hotel": "HOTEL LAURIA",
+    "SA": "SAINT AUGUSTIN",
+    "VR": "ZAVAMISY/SAKAFO",
+    "VB": "TRANO FATORIANA",
+    "MAP": "TOERANA AMINY CARTE"
+  },
+    "contact": {
+      "message1": "Ny ekipanay dia misy amin'ny alàlan'ny telefaona sy mailaka isan'andro, 24 ora isan'andro. Inona no zava-dehibe indrindra amintsika? Ny fiononan'ny mpanjifantsika namana! Ka aza misalasala mifandray aminay, faly be izahay hamaly ny fanontanianao rehetra.",
+      "message2": "Hanoraty izahay",
+      "message3": "Ekeko ny politika momba ny tsiambaratelo",
+      "message4": "Ny angona nangonina ato amin'ity takelaka ity dia i Hôtel Lauria no mitantana mba hitantanana ny vaovao mifandraika amin'ny fangatahana fifandraisana amin'ny tranokala https://www.hotel-lauria.com ary izany, mifanaraka amin'ny Politikanay momba ny tsiambaratelo."
     }
   }

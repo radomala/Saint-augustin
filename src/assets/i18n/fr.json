@@ -1,34 +1,16 @@
 {
-    "form": {
-      "login": "Solon'anarana *",
-      "name": "Anarana *",
-      "password": "Teny miafina *"
-    },
-    "footer": {
-      "cgu": "Toromarika ankapobeiny amin'ny fampiasana ny site (CGU)",
-      "contact-us": "Hifandray aminay",
-      "copyright": "(c) alalana raketa-mg.org 2019",
-      "legal-information": "Toromarika ara-dalàna"
-    },
-    "general": {
-      "our-commitments": "Ireo fanambinay",
-      "partner": "Ireo mpiara-miasa",
-      "team": "Ekipa"
-    },
-    "landing": {
-      "sign-in": "Miditra",
-      "subscribe": "Misoratra anarana",
-      "subscribe-title": "Raha mbola tsy manana kaonty enao",
-      "unsubscribe": "Tsy hifandray intsony",
-      "welcome": "Tongasoa"
-    },
-    "member": {
-      "contact-me": "Hifandray amiko",
-      "error-loading": "Tsy afaka mampiseho ny pejy izahay",
-      "my-contact": "Fifandraisana amiko"
-    },
-    "shared": {
-      "back": "Miverina",
-      "page-not-found": "Pejy tsy mbola misy"
-    }
+  "menuhorizontal": {
+    "hotel": "HOTEL LAURIA",
+    "SA": "SAINT AUGUSTIN",
+    "VR": "VOTRE RESTAURANT",
+    "VB": "VOTRE BUNGALOW",
+    "MAP": "LOCALISATION"
+  },
+  "contact": {
+    "message1": "Notre équipe est disponible par téléphone et par e-mail tous les jours et 24h/24. Le plus important pour nous ? Le confort de notre aimable clientèle ! N'hésitez donc pas à nous solliciter c'est avec grand plaisir que nous répondrons à toutes vos questions.",
+    "message2": "Ecrivez nous",
+    "message3": "J'accepte la politique de confidentialité",
+    "message4": "Les données recueillies sur ce formulaire sont traitées par Hôtel Lauria afin de gérer les informations relatives à la demande de contact sur le site https://www.hotel-lauria.com et ce, conformément à notre Politique de confidentialité."
+    
   }
+}

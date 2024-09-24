@@ -1,0 +1,29 @@
+<div class="test">
+    
+
+<div class="p-grid">
+    <div class="p-col">
+        <div class="box">
+            <div *ngIf="displaymeteo">
+                <app-meteo></app-meteo>
+            </div>
+        </div>
+    </div>
+    <div class="p-col-fixed" style="width:100px">
+        <div class="box">
+            <ul id="navigation">
+                <li id="zoom">
+                    <img pTooltip="Suivez nous sur facebook" src="/assets/image/petit_menu/facebook.png" height="30" (click)="goFacebook()">
+                </li>
+                <li id="zoom">
+                    <img pTooltip="Contactez nous par mail" src="/assets/image/petit_menu/mail.png" height="30" (click)="scroll()">
+                </li>
+                <li id="zoom">
+                    <img pTooltip={{messageMeteo}} src="/assets/image/petit_menu/meteo.png" height="30" (click)="displayMeteo()">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>

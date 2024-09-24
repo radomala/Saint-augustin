@@ -1,1 +1,13 @@
-<p-menubar class="menubar_vertical" [model]="items"> </p-menubar>
+<p-menubar class="menubar_vertical" [model]="items">
+    <ng-template pTemplate="start">
+        <div *ngIf="langueUtuliser ==='fr'">
+            <img src="/assets/image/drapeau/fr.png" height="40" class="p-mr-2" alt="brand logo">
+        </div>
+        <div *ngIf="langueUtuliser ==='mg'">
+            <img src="/assets/image/drapeau/mg.png" height="40" class="p-mr-2" alt="brand logo">
+        </div>
+        <div *ngIf="langueUtuliser ==='en'">
+            <img src="/assets/image/drapeau/us.png" height="40" class="p-mr-2" alt="brand logo">
+        </div>
+    </ng-template>
+</p-menubar>

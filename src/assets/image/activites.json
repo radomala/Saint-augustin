@@ -1,0 +1,25 @@
+
+{
+    "data":[
+        {
+            "previewImageSrc": "assets/image/activites/grand/excursion.jpg",
+            "title": "excursion",
+			"description": "Excursion en bateau"
+        },
+        {
+            "previewImageSrc": "assets/image/activites/grand/kayak.jpg",
+            "title": "kayak",
+			"description": "kayak Description"
+        },
+        {
+            "previewImageSrc": "assets/image/activites/grand/parapente.jpg",
+            "title": "parapente",
+			"description": "parapente Description"
+        },
+		{
+            "previewImageSrc": "assets/image/activites/grand/plonge.jpg",
+            "title": "plonge",
+			"description": "plonge Description"
+        }
+    ]
+}

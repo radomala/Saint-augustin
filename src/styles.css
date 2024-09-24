@@ -21,3 +21,11 @@
     color: red !important;
     font-weight: bold !important;
 }
+
+#logo {
+    background-image: url("/assets/image/logo/logo.jpg");
+    background-attachment: fixed;
+    display: block;
+    width: 100%;
+    
+  }

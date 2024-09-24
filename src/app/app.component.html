@@ -1,132 +1,44 @@
- <div  [ngClass]="{'menufixe_fond_transparent':fondtransparent===true, 'menufixe_fond_nontransparent': fondtransparent===false}">
-    <div class="p-grid">
-      <div class="p-col-fixed" style="width:100px">
-        <div class="box" style="padding-top: 10px;">
-          <button style="margin-left: 4px; background: none !important;" type="text" (click)="visibleSidebar1 = true"
-            pButton icon="pi pi-bars"></button>
-        </div>
-      </div>
-      <div class="p-col-fixed" style="width:400px">
-        <div class="box">
-          <h3 class="name_hotel_vertical">
-            HOTEL LAURIA
-          </h3>
-        </div>
-      </div>
-      <div class="p-col">
-        <div class="box">
-          <app-menu-vertical (methodeContactEvent)="afficherformuliareContact()"></app-menu-vertical>
-        </div>
+<!-- ngclass permet de customiser de quelle css sera appeller , c'est pareil comme ngstyle -->
+<div id="menu"
+  [ngClass]="{'menufixe_fond_transparent':fondtransparent===true, 'menufixe_fond_nontransparent': fondtransparent===false}">
+  <div class="p-grid" style="width: 95%; margin: auto;">
+    <div class="p-col-fixed" style="width:100px">
+      <div class="box" style="padding-top: 10px;">
+        <button style="margin-left: 4px; background: none !important;" type="text" (click)="display()" pButton
+          icon="pi pi-bars"></button>
       </div>
     </div>
-  </div>
-
-<div  *ngIf="diaporama">
-  <div *ngIf="saint_augustin">
-    <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '100%'}"
-      [numVisible]="5" [circular]="true" [autoPlay]="true" [showItemNavigators]="true" [transitionInterval]="2000" [showThumbnails]="false">
-      <ng-template pTemplate="item" let-item>
-        <img [src]="item.previewImageSrc" style="width: 100%;height: 100vh; display: block;" />
-      </ng-template>
-      <ng-template pTemplate="thumbnail" let-item>
-        <div class="p-grid p-nogutter p-justify-center">
-          <img [src]="item.thumbnailImageSrc" style="display: block;" />
-        </div>
-      </ng-template>
-    </p-galleria>
-  </div>
-  <div *ngIf="nos_menu">
-    <div>
-      <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '100%'}"
-        [numVisible]="5" [circular]="true" [autoPlay]="true" [transitionInterval]="2000">
-        <ng-template pTemplate="item" let-item>
-          <img [src]="item.previewImageSrc" style="width: 100%;height: 100vh; display: block;" />
-        </ng-template>
-        <ng-template pTemplate="thumbnail" let-item>
-          <div class="p-grid p-nogutter p-justify-center">
-            <img [src]="item.thumbnailImageSrc" style="display: block;" />
-          </div>
-        </ng-template>
-      </p-galleria>
+    <div class="p-col-fixed" style="width:400px">
+      <div class="box">
+        <h3 class="name_hotel_vertical">
+          HOTEL LAURIA
+        </h3>
+      </div>
     </div>
-    <div>
-      <h2>NOS PRODUIT</h2>
-      <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '100%'}"
-        [numVisible]="5" [circular]="true" [autoPlay]="true" [transitionInterval]="2000">
-        <ng-template pTemplate="item" let-item>
-          <img [src]="item.previewImageSrc" style="width: 100%;height: 90vh; display: block;" />
-        </ng-template>
-        <ng-template pTemplate="thumbnail" let-item>
-          <div class="p-grid p-nogutter p-justify-center">
-            <img [src]="item.thumbnailImageSrc" style="display: block;" />
-          </div>
-        </ng-template>
-      </p-galleria>
+    <div class="p-col">
+      <div class="box">
+        <app-menu-vertical [langueUtuliser]="langueUtuliser" (menuVerticalEvent)="menuVerticalEventRecuperer($event)">
+        </app-menu-vertical>
+      </div>
     </div>
-  </div>
-  <div *ngIf="nos_bengalow">
-    <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '100%'}"
-      [numVisible]="5" [circular]="true" [autoPlay]="true" [transitionInterval]="2000">
-      <ng-template pTemplate="item" let-item>
-        <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
-      </ng-template>
-      <ng-template pTemplate="thumbnail" let-item>
-        <div class="p-grid p-nogutter p-justify-center">
-          <img [src]="item.thumbnailImageSrc" style="display: block;" />
-        </div>
-      </ng-template>
-    </p-galleria>
   </div>
 </div>
 
-<!-- ***************************************** MAP **************************************-->
-<div *ngIf="map" style="width: 100%;">
-  <app-map></app-map>
-</div>
-<!-- ***************************************** FIN MAP **************************************-->
-
-<!-- ***************************************** DEBUT MENU EMBOURGERA **************************************-->
-<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
-  <br>
-  <br>
-  <div class="menu_horizontal_stylepolice">
-    <h2 style="font-weight:normal;">HOTEL LAURIA</h2>
-    <br>
-    <div>
-      <a class="souris" (click)="menuHorizontalPhotos('saint_augustin')">
-        <span style="cursor: pointer;">SAINT AUGUSTIN</span>
-      </a>
-    </div>
-    <br>
-    <div>
-      <a class="souris" (click)="menuHorizontalPhotos('nos_menu')">
-        <span style="cursor: pointer;">RESTAURATION</span>
-      </a>
-    </div>
-    <br>
-    <div>
-      <a class="souris" (click)="menuHorizontalPhotos('nos_bengalow')">
-        <span style="cursor: pointer;">NOS BUNGOLW</span>
-      </a>
-    </div>
-    <br>
-    <div>
-      <a class="souris" (click)="menuHorizontalMap()">
-        <span style="cursor: pointer;">GOOGLE MAP</span>
-      </a>
-    </div>
-  </div>
-
-  <br>
-</p-sidebar>
-<div style="background-color: black;">
-  <app-contact></app-contact>
+<div class="menufixe_petit_menu">
+  <app-petit-menu></app-petit-menu>
 </div>
 
-
+<div>
+  <app-menu-horizontal [displayMenuHorizontal]="displayMenuHorizontal"></app-menu-horizontal>
+</div>
 <div>
   <router-outlet></router-outlet>
 </div>
 
-
-<!-- ***************************************** FIN ROUTAGE **************************************-->
+ <div id=divcontact style="background-color: #28282e;">
+  <app-contact></app-contact>
+</div>
+<br>
+<div>
+  <app-footer></app-footer> 
+</div>

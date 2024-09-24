@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ButtonModule} from 'primeng/button';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import {MessageModule} from 'primeng/message';
 import {PanelModule} from 'primeng/panel';
 import {InputTextModule} from 'primeng/inputtext';
@@ -23,14 +23,11 @@ import {DataViewModule} from 'primeng/dataview';
 import {MessagesModule} from 'primeng/messages';
 import {MenuModule} from 'primeng/menu';
 import {GalleriaModule} from 'primeng/galleria';
-GalleriaModule
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MembreService } from './service/membreService';
-import { PhotoService } from './service/photoService';
-import { MenuHorizontalComponent } from './menu-horizontal/menu-horizontal.component';
 import { MenuVerticalComponent } from './menu-vertical/menu-vertical.component';
 import {GMapModule} from 'primeng/gmap';
 import { MapComponent } from './map/map.component';
@@ -41,17 +38,34 @@ import { NgxCaptchaModule } from 'ngx-captcha';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader  } from '@ngx-translate/http-loader';
-
+import { MenuHorizontalComponent } from './menu-horizontal/menu-horizontal.component';
+import { ActivitesComponent } from './activites/activites.component';
+import {CarouselModule} from 'primeng/carousel';
+import { DecouvertSaintAugustinComponent } from './decouvert-saint-augustin/decouvert-saint-augustin.component';
+import { NosRestaurantComponent } from './nos-restaurant/nos-restaurant.component';
+import {AccordionModule} from 'primeng/accordion';
+import { NosBungalowComponent } from './nos-bungalow/nos-bungalow.component';
+import { MeteoComponent } from './meteo/meteo.component';
+import { FooterComponent } from './footer/footer.component';
+import { PetitMenuComponent } from './petit-menu/petit-menu.component';
+import { PhotoService } from './service/photoservice';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuHorizontalComponent,
     MenuVerticalComponent,
     MapComponent,
-    ContactComponent
+    ContactComponent,
+    MenuHorizontalComponent,
+    ActivitesComponent,
+    DecouvertSaintAugustinComponent,
+    NosRestaurantComponent,
+    NosBungalowComponent,
+    MeteoComponent,
+    FooterComponent,
+    PetitMenuComponent
     
   ],
   imports: [
@@ -59,8 +73,6 @@ import { TranslateHttpLoader  } from '@ngx-translate/http-loader';
 
     BrowserModule,
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     MessageModule,
     PanelModule,
     InputTextModule,
@@ -69,6 +81,7 @@ import { TranslateHttpLoader  } from '@ngx-translate/http-loader';
     BrowserAnimationsModule,
     ButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     MessageModule,
     PanelModule,
     InputTextModule,
@@ -92,11 +105,16 @@ import { TranslateHttpLoader  } from '@ngx-translate/http-loader';
     ToastModule,
     NgxCaptchaModule,
     InputSwitchModule,
+    CarouselModule,
+    AccordionModule,
+    
+
+    // pour le dictionaire
     TranslateModule.forRoot(
       {
         loader: {
           provide : TranslateLoader,
-          useFactory : (http : HttpClient) => {return new TranslateHttpLoader(http, './assets/i18n', '.json' );},
+          useFactory : (http : HttpClient) => {return new TranslateHttpLoader(http, './assets/i18n/', '.json' );},
           deps: [HttpClient] 
         }
       }
@@ -109,4 +127,4 @@ import { TranslateHttpLoader  } from '@ngx-translate/http-loader';
   providers: [MembreService, PhotoService, MessageService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

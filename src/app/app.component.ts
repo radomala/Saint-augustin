@@ -1,9 +1,8 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, DoCheck, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MessageService, SelectItem } from 'primeng/api';
+import { TranslateService } from '@ngx-translate/core';
 import { EmailService } from './service/emailService';
-import { PhotoService } from './service/photoService';
 
 @Component({
   selector: 'app-root',
@@ -11,110 +10,70 @@ import { PhotoService } from './service/photoService';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit,  DoCheck {
+export class AppComponent implements OnInit, DoCheck {
 
-  constructor(private emailService: EmailService, private router: Router, private photoService: PhotoService, private fb: FormBuilder) { }
+  //afficher / non afficher menu horizontal
+  displayMenuHorizontal: number = 0;
 
-  userform: FormGroup;
-  submitted: boolean;
-  genders: SelectItem[];
-  description: string;
+  fondtransparent: boolean;
+  //langues disponnibles
+  supportLanguages = ['en', 'fr', 'mg']
+  //par defaut c'est fr
+  langueUtuliser: string = 'fr';
+  //afficher meteo
+  displaymeteo: boolean =true;
+  
 
-  images: any[];
-  visibleSidebar1;
-  saint_augustin: boolean;
-  nos_menu: boolean;
-  nos_bengalow: boolean;
-  fondtransparent:boolean;
-
-  responsiveOptions: any[] = [
-    {
-      breakpoint: '1024px',
-      numVisible: 5
-    },
-    {
-      breakpoint: '768px',
-      numVisible: 3
-    },
-    {
-      breakpoint: '560px',
-      numVisible: 1
-    }
-  ];
-
-
-
-  map: boolean;
-  diaporama: boolean = true;
+  constructor(private emailService: EmailService, private router: Router, private translateService: TranslateService, private vps: ViewportScroller) { }
 
   ngOnInit(): void {
-    //les photos afficher par defaut= saint_augustin.json
-    this.saint_augustin = true;
-    this.photoService.getImages('saint_augustin').then(images => this.images = images);
+
+    /* ******************LANGUES PAR DEFAUT*****************************************/
+    //on ajoutes les langues dans translate
+    this.translateService.addLangs(this.supportLanguages);
+    //langue par defaut utulisé
+    this.translateService.setDefaultLang(this.langueUtuliser);
+    //on recupere la langue utuliser
+    const browserlang = this.translateService.getBrowserLang();
+    //et dire a translate service de l'utiliser
+    this.translateService.use(this.translateService.getDefaultLang());
+    /* *******************************************************************/
   }
 
-  // methode qui s'execute automatique, c'est pour verifier le 
+  // methode qui s'execute automatique
   //je dois conaitre le valeur de scroll y
   ngDoCheck() {
     var y = window.scrollY;
-    if (y===0) {
-       //le fond de header est tranparent
-       this.fondtransparent = true
+    this.fondtransparent = y === 0 ? true : false;
+  }
+
+  langueSelectionner ( langue : string) {
+    this.translateService.use(this.langueUtuliser);
+  }
+
+  //methode qui permet de scroller sur un div precis (ici quand on clique sur contact, on se met directement sur l'ecran contact en appellant l'id du div)
+  scroll(id) {
+    this.vps.scrollToAnchor(id);
+  }
+
+  menuVerticalEventRecuperer(event: any) {
+    //pour la langue
+    this.langueUtuliser = event['langue'];
+    this.translateService.use(this.langueUtuliser);
+    if (event['contact']) {
+      this.scroll('divcontact');
+    }
+  }
+
+  display() {
+    let i = 1;
+    this.displayMenuHorizontal = 1 + this.displayMenuHorizontal;
+  }
+  displayMeteo() {
+    if (this.displaymeteo) {
+      this.displaymeteo = false;
     } else {
-      // le fond de header n'est pas transparent
-      this.fondtransparent = false;
+      this.displaymeteo = true;
     }
   }
-
-  menuHorizontalPhotos(choix: string) {
-    //afficher diaporama (si on clique diaporama, on affiche le diaporama)
-    this.diaporama = true;
-    //cacher map (si on clique diaporama, on cache le map)
-    this.map = false;
-    //choix
-    if (choix === 'saint_augustin') {
-      this.saint_augustin = true;
-      this.nos_menu = false;
-      this.nos_bengalow = false;
-      this.photoService.getImages(choix).then(images => this.images = images)
-    } else if (choix === 'nos_menu') {
-      this.saint_augustin = false;
-      this.nos_menu = true;
-      this.nos_bengalow = false;
-      this.photoService.getImages(choix).then(images => this.images = images)
-    } else if (choix === 'nos_bengalow') {
-      this.saint_augustin = false;
-      this.nos_menu = false;
-      this.nos_bengalow = true;
-      this.photoService.getImages(choix).then(images => this.images = images)
-    }
-
-    //cacher sidebar, on ferme le sidebar a la fin
-    this.visibleSidebar1 = false;
-
-
-  }
-
-  menuHorizontalMap() {
-    //afficher map (si on clique map, on affiche map)
-    this.map = true;
-    //cacher diaporama
-    this.diaporama = false;
-    //cacher sidebar, on ferme le sidebar a la fin
-    this.visibleSidebar1 = false;
-  }
-
-  // methode qui permet de descendre en bas de la page
-  afficherformuliareContact() {
-    window.scroll(0, 10000);
-  }
-
-  test(): string {
-    var y = window.scrollY;
-    console.log('yyy :', y);
-    return null;
-
-  }
-
-
 }

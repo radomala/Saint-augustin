@@ -1,0 +1,16 @@
+.div_gallerie_grand_photo_debut{
+    width: 100%;
+    height: 100vh;
+  }
+
+  .div_gallerie_grand_photo{
+    width: 100%;
+    height: 80vh;
+  }
+
+  .div_gallerie_description{
+      width: 80%;
+      margin: auto;
+   
+  }
+

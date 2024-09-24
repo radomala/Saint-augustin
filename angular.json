@@ -31,7 +31,9 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeflex/primeflex.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/fontawesome/all.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -1,0 +1,46 @@
+<div class="div_activites_grand">
+    <div class="souris" style="position: absolute;margin-left: 50%; padding-top: 70vh; color: white;" (click)="decouvrir()">
+        <span>Decouvrir</span>
+        <br>
+        <span style="margin-left: 50%;">|</span>
+        <br>
+        <span style="margin-left: 50%;">|</span>
+  
+    </div>
+    <div>
+        <img src="/assets/image/activites/fond/fond_activites.jpg" style="width: 100%;height: 100vh;">
+    </div>
+    
+</div>
+
+<div  id="choix_activites" class="div_carousel_template">
+    <br>
+        <h5 style="margin:48px;">Decouvrir nos activites</h5>
+        <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="false"
+            [responsiveOptions]="responsiveOptions">
+            <ng-template let-product pTemplate="item">
+    
+                <div class="taille_div_image">
+                    <div class="zoom">
+                        <br>
+                        <div>
+                            <img (click)="decouvrirKayak(product.title)" src="{{product.previewImageSrc}}"
+                                style="width: 100%;height: 60vh;" />
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div style="display: inline;">
+                    <div style="display: inline;">
+                        <span style="font-weight: bolder;">{{product.title}} &nbsp; &nbsp;
+                        </span>
+                    </div>
+                    <div style="display: inline;">
+                        <a class="souris" (click)="decouvrirKayak(product.title)">
+                            <span style="cursor: pointer; font-style: oblique;"> Decouvrir</span>
+                        </a>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+</div>

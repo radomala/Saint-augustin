@@ -1,0 +1,55 @@
+#test {
+    display: block;
+    border-radius: 10px;
+    width: 120px;
+    /* height: 280px; */
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgb(0,0,0,1) 0%, rgb(8,7,42,1));
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+}
+
+#test2 {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.csssun {
+    margin-top: 8px;
+    color: yellow;
+    filter:drop-shadow(1px 1px 10px yellow)
+}
+
+.cssmoon {
+    margin-top: 8px;
+    color: white;
+    filter:drop-shadow(1px 1px 10px white);
+    
+
+}
+
+.raonaDiv {
+    margin-top: 5px;
+}
+
+.raona {
+   color: rgb(104,175,197);
+   filter:drop-shadow(1px 1px 5px rgb(104,175,197));
+   animation-name: raonaMoove;
+   animation-iteration-count: infinite;
+   animation-duration: 10s;
+   animation-timing-function: ease-in-out;
+animation-direction: alternate;
+}
+
+@keyframes raonaMoove {
+    from{margin-left: -55;}
+    to{margin-left: 65px;}
+}
+
+
+
+
+

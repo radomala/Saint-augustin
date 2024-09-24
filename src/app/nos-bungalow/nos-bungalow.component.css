@@ -1,0 +1,31 @@
+.div_bungalow_grand{
+    width: 100%;
+    height: 100vh;
+  }
+
+#commentaire1 {
+  width: 80%;
+  margin: auto;
+}
+
+.div_contact_menu_petit{
+  width: 100%;
+  margin: 0px auto;
+}
+
+.div_contact_menu_petit_diapo{
+  width: 50%;
+  padding: 0rem;
+}
+.div_contact_menu_petit_message{
+  width: 50%;
+  color: white;
+  background-color:#28282e;
+  padding: 0rem;
+}
+
+.span_description{
+  width: 80%;
+  margin: auto;
+
+}
